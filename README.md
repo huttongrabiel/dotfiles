@@ -1,8 +1,10 @@
 # Safekeeping of dotfiles
+This is Arch Linux using Tilix Terminal Emulator
 ![TilixExample](photos/TilixScreenshot.png)
 
-# Terminal Emulator
-Currently running tilix on Arch Linux
+# Vim
+Colorscheme is gruvbox can be found on github morhetz/github
+![VimScreenshot](photos/VimExample.png)
 
 # Screenshots
 ![Tilix](photos/Screenshot1.png)
