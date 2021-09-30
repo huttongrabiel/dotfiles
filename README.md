@@ -1,4 +1,5 @@
 # Safekeeping of dotfiles
+![TilixExample](photos/TilixScreenshot.png)
 
 # Terminal Emulator
 Currently running tilix on Arch Linux
