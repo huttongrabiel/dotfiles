@@ -8,7 +8,7 @@ Colorscheme is gruvbox can be found on github morhetz/github
 
 # MacOS
 Using zsh shell with tmux
-![MacTerminal](photos/MacTerminalWithTmux)
+![MacTerminal](photos/MacTerminalWithTmux.png)
 
 # Vim on Mac
 ![MacVimScreenshot](photos/VimOnMac.png)
