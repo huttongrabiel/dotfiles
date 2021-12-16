@@ -1,12 +1,19 @@
-# Safekeeping of dotfiles
+# Arch Linux
 This is Arch Linux using Tilix Terminal Emulator
 ![TilixExample](photos/TilixScreenshot.png)
 
-# Vim
+# Vim on Arch Linux
 Colorscheme is gruvbox can be found on github morhetz/github
-![VimScreenshot](photos/VimExample.png)
+![ArchVimScreenshot](photos/VimExample.png)
 
-# Screenshots
+# MacOS
+Using zsh shell with tmux
+![MacTerminal](photos/MacTerminalWithTmux)
+
+# Vim on Mac
+![MacVimScreenshot](photos/VimOnMac.png)
+
+# Screenshots of Arch Linux
 ![Tilix](photos/Screenshot1.png)
 ![Tilix](photos/Screenshot2.png)
 ![Tilix](photos/Screenshot3.png)
@@ -14,3 +21,4 @@ Colorscheme is gruvbox can be found on github morhetz/github
 ![Tilix](photos/Screenshot5.png)
 ![Tilix](photos/Screenshot6.png)
 ![Tilix](photos/Screenshot7.png)
+
