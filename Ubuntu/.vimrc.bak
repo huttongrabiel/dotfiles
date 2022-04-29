@@ -1,0 +1,30 @@
+syntax enable on
+set termguicolors
+colorscheme molokai
+set background=dark
+set belloff=all
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+inoremap kj <esc>
+set backspace=indent,eol,start
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set ruler
+set incsearch
+set belloff=all
+vnoremap <C-c> "+y
+
+"" ctags settings
+set tags=./tags;/
+"" Ctrl-\ open definition in new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"" Alt+] open definition in vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
