@@ -1,0 +1,20 @@
+format = """
+\\[\
+[whuty](bold fg:87)\
+[@](bold fg:164)\
+[hydro](bold fg:87)\
+\\] \
+$directory\
+$git_branch\
+$line_break\
+$character"""
+
+add_newline = false
+
+[directory]
+style = "bold yellow"
+truncate_to_repo = false
+
+[git_branch]
+style = "bold green"
+format = "[\\[$branch\\]]($style)"

@@ -123,3 +123,9 @@ alias pbcopy="xclip -sel clip"
 alias gap="git add -p"
 alias gd="git diff"
 alias gs="git status"
+
+alias uppityup="sudo apt update && sudo apt upgrade"
+
+. "$HOME/.cargo/env"
+
+eval "$(starship init bash)"
