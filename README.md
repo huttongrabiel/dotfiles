@@ -1,7 +1,7 @@
 *I stopped using Arch, didn't want to deal with it*
 
-# Ubuntu  
-![UbuntuTerminal](photos/UbuntuTerminal.png)
+# Ubuntu Mate 
+![UbuntuTerminal](photos/StarshipTerminalUbuntu.png)
 
 # MacOS
 Using zsh shell with tmux
