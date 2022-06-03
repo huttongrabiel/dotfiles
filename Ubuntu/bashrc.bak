@@ -124,8 +124,14 @@ alias gap="git add -p"
 alias gd="git diff"
 alias gs="git status"
 
+# Commonly accessed config files
+alias vim="nvim"
+
 alias uppityup="sudo apt update && sudo apt upgrade"
 
 . "$HOME/.cargo/env"
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 eval "$(starship init bash)"
+
