@@ -44,11 +44,21 @@ call plug#end()
 
 colorscheme tokyonight
 
+let g:tokyonight_style = "storm"
+
 highlight Normal guibg=none
 highlight LineNr guifg=#5eacd3
 
 "" git blame plugin
 let g:blamer_enabled = 1
+
+"" Delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+"" Yank to clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 
 let mapleader = " "
 
