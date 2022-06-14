@@ -196,4 +196,4 @@ bar {
         status_command i3status
 }
 
-exec  --no-startup-id window-picker.sh
+bindsym $mod+Shift+period exec systemctl suspend
