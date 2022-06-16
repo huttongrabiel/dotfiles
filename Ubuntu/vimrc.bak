@@ -88,6 +88,7 @@ nnoremap <leader>gsh :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>gr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>gh :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>ge :lua vim.diagnostic.open_float()<CR>
 
 " Harpoon key bindings
 nnoremap <silent><leader>hm :lua require("harpoon.mark").add_file()<CR>
@@ -98,3 +99,15 @@ nnoremap <silent><C-f> :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <silent><C-d> :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <silent><C-s> :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <silent><C-a> :lua require("harpoon.ui").nav_file(4)<CR>
+
+" Trim trailing whitespace, thanks primeagen
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup WHUTY
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
