@@ -2,8 +2,6 @@ syntax enable on
 set termguicolors
 set background=dark
 
-inoremap kj <esc>
-
 set backspace=indent,eol,start
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -35,6 +33,8 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 Plug 'ThePrimeagen/harpoon'
 
 Plug 'neovim/nvim-lspconfig'
@@ -44,11 +44,14 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+
 Plug 'gruvbox-community/gruvbox'
-"Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 Plug 'APZelos/blamer.nvim'
+
 Plug 'sevko/vim-nand2tetris-syntax'
 call plug#end()
 
@@ -56,16 +59,20 @@ colorscheme gruvbox
 
 let g:gruvbox_contrast_dark = 'hard'
 
-"let g:tokyonight_style = "storm"
-"let g:tokyonight_transparent=1
+let g:tokyonight_style = "storm"
+let g:tokyonight_transparent = 1
 
 highlight Normal guibg=none
 highlight LineNr guifg=#5eacd3
+highlight ColorColumn guibg=Gray
 
 "" git blame plugin
 let g:blamer_enabled = 1
 
 let mapleader = " "
+
+" This is SO much faster
+inoremap <C-c> <esc>
 
 "" Delete without yanking
 nnoremap <leader>d "_d
@@ -96,7 +103,7 @@ nnoremap <silent><C-e> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <silent><leader><C-n> :lua require("harpoon.ui").nav_next()<CR>
 nnoremap <silent><leader><C-b> :lua require("harpoon.ui").nav_back()<CR>
 nnoremap <silent><C-f> :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <silent><C-d> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <silent><C-x> :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <silent><C-s> :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <silent><C-a> :lua require("harpoon.ui").nav_file(4)<CR>
 

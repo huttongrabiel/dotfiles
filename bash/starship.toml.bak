@@ -1,8 +1,8 @@
 format = """
 \\[\
-[whuty](bold fg:87)\
+[tiny](bold fg:87)\
 [@](bold fg:164)\
-[hydro](bold fg:87)\
+[tim](bold fg:87)\
 \\] \
 $directory\
 $git_branch\
