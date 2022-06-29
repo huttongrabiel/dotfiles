@@ -19,24 +19,18 @@ set colorcolumn=80
 
 vnoremap <C-c> "+y
 
-"" ctags settings
-set tags=./tags;/
-"" Ctrl-\ open definition in new tab
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-"" Alt+] open definition in vertical split
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-"" Compile C++ with F4 (Competitive Programming ONLY!!)
-autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 
 call plug#begin(stdpath('data') . '/plugged')
+" Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'ThePrimeagen/harpoon'
 
+" NVim LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -45,12 +39,15 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+" Colorschemes
 Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
+" Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
+" Git blame
 "Plug 'APZelos/blamer.nvim'
 
 Plug 'sevko/vim-nand2tetris-syntax'
@@ -63,23 +60,26 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:tokyonight_style = "storm"
 let g:tokyonight_transparent = 1
 
+" Rust
+let g:rustfmt_autosave = 1
+
+" git blame plugin
+let g:blamer_enabled = 1
+
 highlight Normal guibg=none
 highlight LineNr guifg=#5eacd3
 highlight ColorColumn guibg=Gray
-
-"" git blame plugin
-let g:blamer_enabled = 1
 
 let mapleader = " "
 
 " This is SO much faster
 inoremap <C-c> <esc>
 
-"" Delete without yanking
+" Delete without yanking
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-"" Yank to clipboard
+" Yank to clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 
@@ -89,7 +89,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-"" LSP Config
+" LSP Config
 nnoremap <leader>gd :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>gi :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>gsh :lua vim.lsp.buf.signature_help()<CR>
@@ -108,6 +108,9 @@ nnoremap <silent><C-x> :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <silent><C-s> :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <silent><C-a> :lua require("harpoon.ui").nav_file(4)<CR>
 
+" Compile C++ with F4 (Competitive Programming ONLY!!)
+autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+
 " Trim trailing whitespace, thanks primeagen
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -118,4 +121,5 @@ endfun
 augroup WHUTY
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+    autocmd BufWritePre *.rs :lua vim.lsp.buf.formatting_sync(nil, 200)
 augroup END
