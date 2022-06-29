@@ -121,5 +121,5 @@ endfun
 augroup WHUTY
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
-    autocmd BufWritePre *.rs :lua vim.lsp.buf.formatting_sync(nil, 200)
+    autocmd BufWritePre *.rs :lua vim.lsp.buf.format()
 augroup END
