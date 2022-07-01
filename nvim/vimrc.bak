@@ -42,6 +42,7 @@ Plug 'hrsh7th/nvim-cmp'
 " Colorschemes
 Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'Soares/base16.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
