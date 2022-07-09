@@ -1,20 +1,21 @@
 format = """
 \\[\
-[tiny](bold fg:87)\
-[@](bold fg:164)\
-[tim](bold fg:87)\
+[tiny](fg:87)\
+[@](fg:164)\
+[tim](fg:87)\
 \\] \
 $directory\
 $git_branch\
-$line_break\
-$character"""
+[| ](bold red)"""
+
+#$line_break\
 
 add_newline = false
 
 [directory]
-style = "bold yellow"
+style = "yellow"
 truncate_to_repo = false
 
 [git_branch]
-style = "bold green"
-format = "[\\[$branch\\]]($style)"
+style = "green"
+format = "[\\($branch\\) ]($style)"
