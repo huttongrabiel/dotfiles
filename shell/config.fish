@@ -23,10 +23,12 @@ function fish_greeting
 
     set_color red
     echo "
-    "
+[urgent] Prepare for Math 125"
 
     set_color yellow
     echo "
+[hurryup] Complete Husky Guide Checklist
+[hurryup] Set up auto payments
     "
 
 end
