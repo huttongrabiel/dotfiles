@@ -1,6 +1,133 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
+syntax enable on
+set termguicolors
+set background=dark
+
+set backspace=indent,eol,start
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set relativenumber
+set nu
+set noswapfile
+set nowrap
+set ruler
+set incsearch
+set noerrorbells
+set nohlsearch
+set colorcolumn=80
+
+vnoremap <C-c> "+y
+
+call plug#begin(stdpath('data') . '/plugged')
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'ThePrimeagen/harpoon'
+
+" NVim LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" Colorschemes
+Plug 'gruvbox-community/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'Soares/base16.nvim'
+
+" Lualine
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
+
+" Git blame
+"Plug 'APZelos/blamer.nvim'
+
+Plug 'sevko/vim-nand2tetris-syntax'
+call plug#end()
+
+colorscheme tokyonight
+
+let g:gruvbox_contrast_dark = 'hard'
+
+let g:tokyonight_style = "storm"
+let g:tokyonight_transparent = 1
+
+" Rust
+let g:rustfmt_autosave = 1
+
+" git blame plugin
+let g:blamer_enabled = 1
+
+"highlight Normal guibg=none
+highlight LineNr guifg=#5eacd3
+highlight ColorColumn guibg=Gray
+
+let mapleader = " "
+
+" This is SO much faster
+inoremap <C-c> <esc>
+
+" Delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" Yank to clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" LSP Config
+nnoremap <silent><leader>gd :lua vim.lsp.buf.definition()<CR>
+nnoremap <silent><leader>gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent><leader>gsh :lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent><leader>gr :lua vim.lsp.buf.references()<CR>
+nnoremap <silent><leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap <silent><leader>gh :lua vim.lsp.buf.hover()<CR>
+nnoremap <silent><leader>ge :lua vim.diagnostic.open_float()<CR>
+
+" Harpoon key bindings
+nnoremap <silent><leader>hm :lua require("harpoon.mark").add_file()<CR>
+nnoremap <silent><C-e> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <silent><leader><C-n> :lua require("harpoon.ui").nav_next()<CR>
+nnoremap <silent><leader><C-b> :lua require("harpoon.ui").nav_back()<CR>
+nnoremap <silent><C-f> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <silent><C-x> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <silent><C-s> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <silent><C-a> :lua require("harpoon.ui").nav_file(4)<CR>
+
+" Compile C++ with F4 (Competitive Programming ONLY!!)
+autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+
+" Trim trailing whitespace, thanks primeagen
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup WHUTY
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+    autocmd BufWritePre *.rs :lua vim.lsp.buf.formatting()
+augroup END
 
 lua << EOF
     require'nvim-treesitter.configs'.setup {
@@ -13,7 +140,7 @@ lua << EOF
       textobjects = { enable = true }
     }
 
--- nvim-cmp config
+    -- nvim-cmp config
     local cmp = require'cmp'
 
     cmp.setup({
@@ -93,4 +220,11 @@ lua << EOF
     require'lspconfig'.rust_analyzer.setup{ capabilities = capabilities }
     require'lspconfig'.clangd.setup{ capabilities = capabilities }
     require'lspconfig'.hls.setup{ capabilities = capabilities }
+
+    -- Lua Line
+    require('lualine').setup {
+        options = {
+            theme = 'nightfly'
+        }
+    }
 EOF

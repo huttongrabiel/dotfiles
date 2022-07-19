@@ -2,10 +2,15 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set PATH $HOME/.cargo/bin $PATH
+
 alias vim="nvim"
+
 alias gs='git status'
 alias gap="git add -p"
 alias gd="git diff"
+
+alias ll="exa -l"
 
 alias uppityup="sudo apt update && sudo apt upgrade"
 
@@ -30,7 +35,7 @@ function fish_prompt
 	set_color brblack
 	echo -n "["(date "+%H:%M")"] "
 	set_color blue
-	echo -n (hostname)
+	echo -n "tinytim"
 	if [ $PWD != $HOME ]
 		set_color brblack
 		echo -n ':'

@@ -56,7 +56,7 @@ floating_modifier $mod
 bindsym $mod+Return exec mate-terminal
 
 # start a browser
-bindsym $mod+b exec firefox
+bindsym $mod+b exec brave-browser
 
 # kill focused window
 bindsym $mod+Shift+q kill
