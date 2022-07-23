@@ -36,7 +36,7 @@ end
 function fish_prompt
 	set_color brblack
 	echo -n "["(date "+%H:%M")"] "
-	set_color blue
+	set_color cyan
 	echo -n "tinytim"
 	if [ $PWD != $HOME ]
 		set_color brblack

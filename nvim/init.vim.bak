@@ -41,7 +41,6 @@ Plug 'hrsh7th/nvim-cmp'
 " Colorschemes
 Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'Soares/base16.nvim'
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
@@ -52,10 +51,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
-" Git blame
-"Plug 'APZelos/blamer.nvim'
-
-Plug 'sevko/vim-nand2tetris-syntax'
+"Plug 'sevko/vim-nand2tetris-syntax'
 call plug#end()
 
 colorscheme tokyonight
@@ -68,10 +64,7 @@ let g:tokyonight_transparent = 1
 " Rust
 let g:rustfmt_autosave = 1
 
-" git blame plugin
-let g:blamer_enabled = 1
-
-"highlight Normal guibg=none
+highlight Normal guibg=none
 highlight LineNr guifg=#5eacd3
 highlight ColorColumn guibg=Gray
 
@@ -79,6 +72,10 @@ let mapleader = " "
 
 " This is SO much faster
 inoremap <C-c> <esc>
+
+" Move lines
+vnoremap("J", ":m '>+1<CR>gv=gv")
+vnoremap("K", ":m '<-2<CR>gv=gv")
 
 " Delete without yanking
 nnoremap <leader>d "_d
@@ -130,6 +127,8 @@ augroup WHUTY
 augroup END
 
 lua << EOF
+
+    -- treesitter config
     require'nvim-treesitter.configs'.setup {
       ensure_installed = "all",
       highlight = {
