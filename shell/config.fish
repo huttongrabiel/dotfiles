@@ -20,17 +20,6 @@ function fish_greeting
     echo
     set_color cyan
     echo "Welcome to the dark side. blub, blub, blub..."
-
-    set_color red
-    echo "
-[urgent] Prepare for Math 125"
-
-    set_color yellow
-    echo "
-[hurryup] Complete Husky Guide Checklist
-[hurryup] Set up auto payments
-    "
-
 end
 
 function fish_prompt
