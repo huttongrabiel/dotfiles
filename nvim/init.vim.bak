@@ -48,8 +48,6 @@ Plug 'arcticicestudio/nord-vim'
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
-" If you want to have icons in your statusline choose one of these
-Plug 'kyazdani42/nvim-web-devicons'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -227,7 +225,8 @@ lua << EOF
     -- Lua Line
     require('lualine').setup {
         options = {
-            theme = 'nightfly'
+            theme = 'nightfly',
+            icons_enabled = false,
         }
     }
 EOF
