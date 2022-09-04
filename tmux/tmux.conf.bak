@@ -3,6 +3,9 @@ set -ga terminal-overrides ",xterm-256color*:Tc"
 set -g mouse on
 set-option -g history-limit 6000
 
+unbind C-b
+set-option -g prefix C-Space
+
 set -g status-position bottom
 set -g status-bg colour234
 set -g status-fg colour137
@@ -25,5 +28,7 @@ setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244
 setw -g window-status-bell-style bold
 setw -g window-status-bell-style fg=colour255
 setw -g window-status-bell-style bg=colour1
+
+setw -g mode-keys vi
 
 bind-key -r I run-shell "tmux neww primeagen-cht.sh"

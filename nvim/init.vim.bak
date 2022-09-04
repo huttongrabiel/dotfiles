@@ -44,6 +44,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
@@ -57,7 +58,7 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 "Plug 'sevko/vim-nand2tetris-syntax'
 call plug#end()
 
-colorscheme onedark
+colorscheme nord
 
 let g:gruvbox_contrast_dark = 'hard'
 
