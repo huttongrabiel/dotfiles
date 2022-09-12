@@ -45,6 +45,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
@@ -56,7 +57,9 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 "Plug 'sevko/vim-nand2tetris-syntax'
 call plug#end()
 
-colorscheme nord
+colorscheme catppuccin
+
+let g:catppuccin_flavor = "latte"
 
 let g:gruvbox_contrast_dark = 'hard'
 
@@ -229,4 +232,8 @@ lua << EOF
             icons_enabled = false,
         }
     }
+
+    -- Catpuccin Setup
+    require("catppuccin").setup()
+
 EOF
