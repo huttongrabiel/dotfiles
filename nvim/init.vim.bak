@@ -59,7 +59,7 @@ Plug 'lewis6991/gitsigns.nvim'
 "Plug 'sevko/vim-nand2tetris-syntax'
 call plug#end()
 
-colorscheme catppuccin
+colorscheme onedark
 
 let g:catppuccin_flavor = "latte"
 
