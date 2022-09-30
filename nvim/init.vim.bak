@@ -72,7 +72,7 @@ let g:tokyonight_transparent = 1
 let g:rustfmt_autosave = 1
 
 highlight Normal guibg=none
-highlight LineNr guifg=#cf7ff4
+highlight LineNr guifg=#70706e
 highlight ColorColumn guibg=Gray
 
 let mapleader = " "
