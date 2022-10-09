@@ -46,6 +46,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'sainnhe/everforest'
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
