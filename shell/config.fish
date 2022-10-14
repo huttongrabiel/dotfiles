@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 set PATH $HOME/.cargo/bin $PATH
+set PATH $HOME/.emacs.d/doomemacs/bin $PATH
 
 alias vim="nvim"
 
