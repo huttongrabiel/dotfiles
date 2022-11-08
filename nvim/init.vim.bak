@@ -45,8 +45,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'sainnhe/everforest'
+Plug 'https://github.com/shaunsingh/solarized.nvim'
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
@@ -62,7 +61,7 @@ call plug#end()
 
 colorscheme onedark
 
-let g:catppuccin_flavor = "latte"
+let g:solarized_termcolors=256
 
 let g:gruvbox_contrast_dark = 'hard'
 
@@ -222,7 +221,7 @@ lua << EOF
         mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
     }
 
-    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
     -- LSP Config
     require'lspconfig'.rust_analyzer.setup{ capabilities = capabilities }
     require'lspconfig'.clangd.setup{ capabilities = capabilities }
@@ -235,9 +234,6 @@ lua << EOF
             icons_enabled = false,
         }
     }
-
-    -- Catpuccin Setup
-    require("catppuccin").setup()
 
     -- Git Signs
     require('gitsigns').setup()

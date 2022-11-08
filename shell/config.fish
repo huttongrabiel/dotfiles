@@ -17,15 +17,9 @@ alias uppityup="sudo apt update && sudo apt upgrade"
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-function fish_greeting
-    echo
-    set_color cyan
-    echo "Welcome to the dark side. blub, blub, blub..."
-end
+set -U fish_greeting ""
 
 function fish_prompt
-	set_color brblack
-	echo -n "["(date "+%H:%M")"] "
 	set_color cyan
 	echo -n "tinytim"
 	if [ $PWD != $HOME ]
