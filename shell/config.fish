@@ -13,7 +13,7 @@ alias gd="git diff"
 
 alias ll="exa -l"
 
-alias uppityup="sudo apt update && sudo apt upgrade"
+alias uppityup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
