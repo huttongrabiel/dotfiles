@@ -10,9 +10,8 @@ alias vim="nvim"
 alias gs='git status'
 alias gap="git add -p"
 alias gd="git diff"
-
+alias cat="bat"
 alias ll="exa -l"
-
 alias uppityup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
