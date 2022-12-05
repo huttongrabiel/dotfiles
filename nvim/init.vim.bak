@@ -223,7 +223,8 @@ lua << EOF
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
     -- LSP Config
-    require'lspconfig'.rust_analyzer.setup{ capabilities = capabilities }
+    require'lspconfig'.rust_analyzer.setup({})
+--    require'lspconfig'.rust_analyzer.setup{ capabilities = capabilities }
     require'lspconfig'.clangd.setup{ capabilities = capabilities }
     require'lspconfig'.hls.setup{ capabilities = capabilities }
 
