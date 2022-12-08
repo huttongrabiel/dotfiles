@@ -45,7 +45,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'https://github.com/shaunsingh/solarized.nvim'
 
 " Lualine
 Plug 'nvim-lualine/lualine.nvim'
