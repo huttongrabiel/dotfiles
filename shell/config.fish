@@ -19,18 +19,18 @@ alias uppityup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 set -U fish_greeting ""
 
 function fish_prompt
-	set_color cyan
+	set_color green
 	echo -n "tinytim"
 	if [ $PWD != $HOME ]
 		set_color brblack
 		echo -n ':'
-		set_color yellow
+		set_color red
 		echo -n (basename $PWD)
 	end
-	set_color green
+	set_color white
 	printf '%s ' (__fish_git_prompt)
 	set_color red
-	echo -n '| '
+	echo -n '🎅  '
 	set_color normal
 end
 
