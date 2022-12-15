@@ -97,6 +97,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" Netrw Shortcut
+nnoremap <silent><leader>pv :Ex<CR>
+
 " LSP Config
 nnoremap <silent><leader>gd :lua vim.lsp.buf.definition()<CR>
 nnoremap <silent><leader>gi :lua vim.lsp.buf.implementation()<CR>
