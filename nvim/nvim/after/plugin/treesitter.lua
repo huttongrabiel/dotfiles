@@ -9,10 +9,12 @@ require 'nvim-treesitter.configs'.setup {
         "cpp",
         "python",
         "html",
+        "css",
         "json",
         "markdown",
         "toml",
         "bash",
+        "svelte",
     },
     highlight = {
         enable = true,

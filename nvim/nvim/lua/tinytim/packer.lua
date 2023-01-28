@@ -13,9 +13,6 @@ return require("packer").startup(function(use)
     use("Tsuzat/NeoSolarized.nvim")
 
     use {
-        'lewis6991/gitsigns.nvim',
-    }
-    use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
@@ -40,5 +37,15 @@ return require("packer").startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
-
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
+        'lewis6991/gitsigns.nvim',
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 end)

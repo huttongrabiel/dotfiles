@@ -5,10 +5,12 @@ require("tinytim.remap");
 local tinytimgroup = vim.api.nvim_create_augroup("tinytim", {})
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd({ "BufWritePre", "LspAttach" }, {
+autocmd({ "BufWritePre" }, {
     group = tinytimgroup,
     callback = function()
-        vim.lsp.buf.format()
+        vim.lsp.buf.format {
+            filter = function(client) return client.name ~= "clangd" end
+        }
     end
 })
 
