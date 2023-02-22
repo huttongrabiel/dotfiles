@@ -48,4 +48,6 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use 'lervag/vimtex'
+    use 'Mofiqul/vscode.nvim'
 end)

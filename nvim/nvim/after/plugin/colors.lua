@@ -12,6 +12,6 @@ NeoSolarized.setup {
     transparent = false,
 }
 
-vim.cmd.colorscheme("onedark")
+vim.cmd.colorscheme('vscode')
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
