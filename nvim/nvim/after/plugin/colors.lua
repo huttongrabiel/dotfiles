@@ -1,16 +1,6 @@
--- Solarized Configuration
---
-local ok_status, NeoSolarized = pcall(require, "NeoSolarized")
-
-if not ok_status then
-    return
-end
-
-NeoSolarized.setup {
-    style = "light",
-    enable_italics = false,
-    transparent = false,
-}
+require('vscode').setup({
+    style = 'dark',
+})
 
 vim.cmd.colorscheme('vscode')
 

@@ -10,7 +10,6 @@ return require("packer").startup(function(use)
     use("theprimeagen/harpoon")
 
     use("joshdick/onedark.vim")
-    use("Tsuzat/NeoSolarized.nvim")
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -48,6 +47,6 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    use 'lervag/vimtex'
     use 'Mofiqul/vscode.nvim'
+    use 'lervag/vimtex'
 end)

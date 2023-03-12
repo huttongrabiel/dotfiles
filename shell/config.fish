@@ -10,6 +10,7 @@ alias vim="nvim"
 alias gs='git status'
 alias gap="git add -p"
 alias gd="git diff"
+alias gfm="git diff --no-color -U0 | clang-format-diff -p1 -i"
 alias cat="bat"
 alias ll="exa -l"
 alias uppityup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
