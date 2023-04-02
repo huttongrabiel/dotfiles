@@ -10,6 +10,7 @@ return require("packer").startup(function(use)
     use("theprimeagen/harpoon")
 
     use("joshdick/onedark.vim")
+    use 'marko-cerovac/material.nvim'
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -49,4 +50,6 @@ return require("packer").startup(function(use)
     }
     use 'Mofiqul/vscode.nvim'
     use 'lervag/vimtex'
+    use 'dinhhuy258/git.nvim'
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)

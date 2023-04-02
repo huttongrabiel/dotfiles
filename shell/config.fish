@@ -21,17 +21,16 @@ alias pbcopy="xsel --clipboard --input"
 set -U fish_greeting ""
 
 function fish_prompt
-	set_color yellow
+	set_color white
 	echo -n "tinytim"
 	if [ $PWD != $HOME ]
 		set_color brblack
 		echo -n ':'
-		set_color cyan
+		set_color green
 		echo -n (basename $PWD)
 	end
-	set_color red
+	set_color c842ed
 	printf '%s ' (__fish_git_prompt)
-	set_color red
 	set_color normal
 end
 
