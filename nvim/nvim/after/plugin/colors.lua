@@ -8,6 +8,11 @@ require('material').setup({
     }
 })
 
-vim.cmd.colorscheme('material')
+require('gruvbox').setup({
+    bold = true,
+    contrast = "hard"
+})
+
+vim.cmd.colorscheme('gruvbox')
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

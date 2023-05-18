@@ -14,7 +14,8 @@ local autocmd = vim.api.nvim_create_autocmd
     end
 })]] --
 
-autocmd({ "BufWritePre" }, {
-    group = tinytimgroup,
-    command = "%s/\\s\\+$//e",
-})
+-- Auto trim whitespace
+-- autocmd({ "BufWritePre" }, {
+--     group = tinytimgroup,
+--     command = "%s/\\s\\+$//e",
+-- })

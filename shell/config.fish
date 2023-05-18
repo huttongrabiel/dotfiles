@@ -4,6 +4,7 @@ end
 
 set PATH $HOME/.cargo/bin $PATH
 set PATH $HOME/.emacs.d/doomemacs/bin $PATH
+set PATH /usr/local/go/bin $PATH
 
 alias vim="nvim"
 
@@ -15,6 +16,7 @@ alias cat="bat"
 alias ll="exa -l"
 alias uppityup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias pbcopy="xsel --clipboard --input"
+alias sss="sudo systemctl suspend"
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -39,3 +41,14 @@ function nvm
 end
 
 # starship init fish | source
+
+# opam configuration
+source /home/hutton/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/hutton/anaconda3/bin/conda
+    eval /home/hutton/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+

@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/hutton/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/hutton/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/hutton/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -150,6 +155,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hutton/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/home/hutton/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -207,6 +217,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hutton/.local/share/nvim/site/pack/packer/start/vscode.nvim",
     url = "https://github.com/Mofiqul/vscode.nvim"
+  },
+  ["whitespace.nvim"] = {
+    config = { "\27LJ\2\ní\1\0\0\a\0\f\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0006\4\0\0'\6\1\0B\4\2\0029\4\v\4B\0\4\1K\0\1\0\ttrim\14<Leader>t\6n\bset\vkeymap\bvim\22ignored_filetypes\1\4\0\0\20TelescopePrompt\fTrouble\thelp\1\0\2\20ignore_terminal\2\14highlight\15DiffDelete\nsetup\20whitespace-nvim\frequire\0" },
+    loaded = true,
+    path = "/home/hutton/.local/share/nvim/site/pack/packer/start/whitespace.nvim",
+    url = "https://github.com/johnfrankmorgan/whitespace.nvim"
   }
 }
 
@@ -219,6 +235,10 @@ time([[Setup for markdown-preview.nvim]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: whitespace.nvim
+time([[Config for whitespace.nvim]], true)
+try_loadstring("\27LJ\2\ní\1\0\0\a\0\f\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0006\4\0\0'\6\1\0B\4\2\0029\4\v\4B\0\4\1K\0\1\0\ttrim\14<Leader>t\6n\bset\vkeymap\bvim\22ignored_filetypes\1\4\0\0\20TelescopePrompt\fTrouble\thelp\1\0\2\20ignore_terminal\2\14highlight\15DiffDelete\nsetup\20whitespace-nvim\frequire\0", "config", "whitespace.nvim")
+time([[Config for whitespace.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

@@ -7,4 +7,6 @@ config.colors = {
     cursor_border = 'yellow',
 }
 
+config.check_for_updates = false
+
 return config
