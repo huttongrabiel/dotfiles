@@ -13,6 +13,15 @@ require('gruvbox').setup({
     contrast = "hard"
 })
 
-vim.cmd.colorscheme('gruvbox')
+require('tokyonight').setup({
+    style = "storm",
+})
+
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
+
+vim.cmd.colorscheme('material')
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

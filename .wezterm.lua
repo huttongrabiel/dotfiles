@@ -7,6 +7,8 @@ config.colors = {
     cursor_border = 'yellow',
 }
 
+config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
+
 config.check_for_updates = false
 
 return config

@@ -33,6 +33,8 @@ function fish_prompt
 	end
 	set_color c842ed
 	printf '%s ' (__fish_git_prompt)
+    set_color white
+	echo -n "λ "
 	set_color normal
 end
 

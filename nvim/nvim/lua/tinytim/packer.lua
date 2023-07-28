@@ -10,8 +10,10 @@ return require("packer").startup(function(use)
     use("theprimeagen/harpoon")
 
     use("joshdick/onedark.vim")
+    use 'navarasu/onedark.nvim'
     use 'marko-cerovac/material.nvim'
     use { "ellisonleao/gruvbox.nvim" }
+    use 'folke/tokyonight.nvim'
 
     use {
         'nvim-treesitter/nvim-treesitter',
