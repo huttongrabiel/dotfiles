@@ -9,6 +9,8 @@ return require("packer").startup(function(use)
     })
     use("theprimeagen/harpoon")
 
+    use 'tjdevries/colorbuddy.vim'
+    use 'tjdevries/gruvbuddy.nvim'
     use("joshdick/onedark.vim")
     use 'navarasu/onedark.nvim'
     use 'marko-cerovac/material.nvim'

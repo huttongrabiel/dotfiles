@@ -22,6 +22,8 @@ require('onedark').setup {
 }
 require('onedark').load()
 
-vim.cmd.colorscheme('material')
+require('colorbuddy').colorscheme('gruvbuddy')
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--vim.cmd.colorscheme('gruvbuddy')
+
+--vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

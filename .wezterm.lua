@@ -7,6 +7,14 @@ config.colors = {
     cursor_border = 'yellow',
 }
 
+-- Window
+config.window_padding = {
+    bottom = 0,
+    right = 0,
+    left = 0,
+    top = 0,
+}
+
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 
 config.check_for_updates = false
