@@ -5,6 +5,7 @@ end
 set PATH $HOME/.cargo/bin $PATH
 set PATH $HOME/.emacs.d/doomemacs/bin $PATH
 set PATH /usr/local/go/bin $PATH
+set PATH $HOME/misc/zig-linux-x86_64-0.12.0-dev.1872+2b5897836 $PATH
 
 alias vim="nvim"
 

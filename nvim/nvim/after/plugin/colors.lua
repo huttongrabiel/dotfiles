@@ -22,8 +22,8 @@ require('onedark').setup {
 }
 require('onedark').load()
 
-require('colorbuddy').colorscheme('gruvbuddy')
+-- require('colorbuddy').colorscheme('gruvbuddy')
 
---vim.cmd.colorscheme('gruvbuddy')
+vim.cmd.colorscheme('catppuccin')
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

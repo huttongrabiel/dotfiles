@@ -29,7 +29,9 @@ vim.opt.wrap = false
 
 vim.g.mapleader = " "
 
-vim.opt.cursorline = true -- Highlight the current line
+vim.g.zig_fmt_autosave = 0
+
+--vim.opt.cursorline = true -- Highlight the current line
 local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
 local set_cursorline = function(event, value, pattern)
   vim.api.nvim_create_autocmd(event, {

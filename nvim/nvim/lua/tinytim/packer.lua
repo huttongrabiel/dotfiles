@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
     use 'marko-cerovac/material.nvim'
     use { "ellisonleao/gruvbox.nvim" }
     use 'folke/tokyonight.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         'nvim-treesitter/nvim-treesitter',

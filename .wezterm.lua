@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+--config.color_scheme = 'Catppuccin Latte'
+
 config.colors = {
     background = '#1a1a1a',
     cursor_bg = 'yellow',
@@ -15,7 +17,33 @@ config.window_padding = {
     top = 0,
 }
 
-config.font_size = 13.5
+--config.window_frame = {
+--    active_titlebar_bg = '#ffffff',
+--    inactive_titlebar_bg = "#ffffff",
+--}
+
+--config.colors = {
+--    tab_bar = {
+--        inactive_tab_edge = '#ffffff',
+--        background = '#ffffff',
+--    },
+--
+--    new_tab = {
+--        bg_color = '#ffffff',
+--        fg_color = '#ffffff',
+--    },
+--}
+
+config.keys = {
+  -- This will create a new split and run your default program inside it
+  {
+    key = '%',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  },
+}
+
+config.font_size = 13
 
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 
