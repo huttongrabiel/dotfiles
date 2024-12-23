@@ -1,9 +1,8 @@
-#!/usr/bin/bash
-
 # i3
 cp ~/.config/i3/config ~/fun/dotfiles/i3/i3config
 # nvim
-cp ~/.config/nvim/init.vim ~/fun/dotfiles/nvim/init.vim.bak
+# cp ~/.config/nvim/init.vim ~/fun/dotfiles/nvim/init.vim.bak
+cp -r ~/.config/nvim/ ~/fun/dotfiles/nvim/nvim-lazy/
 # shell
 cp ~/.config/fish/config.fish ~/fun/dotfiles/shell/config.fish
 cp ~/.profile ~/fun/dotfiles/shell/
